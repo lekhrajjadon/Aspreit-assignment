@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dsa-tree-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dsa-tree-app
+  template:
+    metadata:
+      labels:
+        app: dsa-tree-app
+    spec:
+      containers:
+      - name: dsa-tree-container
+        image: dsa-tree-image:latest
+        ports:
+        - containerPort: 80
+

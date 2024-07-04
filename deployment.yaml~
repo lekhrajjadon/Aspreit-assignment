@@ -1,0 +1,19 @@
+piVersion: apps/v1
+kind: Deployment
+metadata:
+    name: binary-tree-path-sum-cpp
+    spec:
+        replicas: 3
+          selector:
+                matchLabels:
+                        app: binary-tree-path-sum-cpp
+                          template:
+                                metadata:
+                                        labels:
+                                                  app: binary-tree-path-sum-cpp
+                                                      spec:
+                                                              containers:
+                                                                      - name: binary-tree-path-sum-cpp
+                                                                              image: dsa-tree-image:latest
+                                                                                      ports:
+                                                                                                - containerPort: 8080
